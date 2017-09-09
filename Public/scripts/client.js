@@ -10,14 +10,14 @@ function addPerson() {
     console.log(nametoAdd, facttoAdd)
     $('.person').val(''); //clears input form
 
-    //create object to hold data to send to server
+    //create object literal to hold data to send to server
     var person = {
-        name = nametoAdd,
-        fact = facttoAdd,
+        name: nametoAdd,
+        fact: facttoAdd,
     };   
     //post request for person list to send to server
     $.ajax({
-        type: 'POST',
+       type: 'POST',
         url:  '/personlist',
         data:  person, 
         success: function(response) {
