@@ -7,9 +7,19 @@
     <script src="vendors/jquery-3.2.1.min.js"></script>
     <script src="scripts/client.js"></script>
      <!--won't let me source scripts when html is in a views folder-->
-    <title>Document</title>
+    <title>Person Lister</title>
 </head>
 <body>
-    <p>am i here?</p>
+    <h1>Add A Person</h1>
+    <section id="input">
+        <input type="text" placeholder="name" id="name" class="person">
+        <input type="text" placeholder="fact" id="fact" class="person">
+        <button id="add">Add Person</button>
+    </section>
+    <section id="return">
+        <h2>People List:</h2>
+    <!-- append person list array from server-->    
+    </section>
 </body>
+
 </html>
