@@ -3,7 +3,7 @@ var bodyParser = require('body-parser');
 var express = require('express');
 var path = require('path');
 //var moduleName if needed
-
+var indexRouter = require('./Routes/index'); //server requires index module
 //variables
 var app = express();
 var port = 3000
@@ -14,9 +14,9 @@ app.use(express.static('public'));// tells express to use this server path to fi
 
 app.use(bodyParser.urlencoded({extended: true})); // tell express to use body parser for objects
 
-app.get('/', function(res,req){
-     res.sendFile(path.resolve('./Public/index.html'));
-    }); //index route - I think this is for when a client first lands on a page.
+//Routes
+app.use('/', indexRouter); //tells express to use the required route to access base page
+
 
 app.post('/personlist', function(req, res) {
      var person = req.body;
