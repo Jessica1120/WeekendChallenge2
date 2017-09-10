@@ -36,8 +36,8 @@ function getPersonList() {
         success: function(response) {
             $('#return').empty(); // empties contents of return section before updating array
             console.log(response);
-            for(var i = 1; i <response.length; i++) {
-                $('#return').append('<p>' + response[i] + '</p>'); //appends array to cleared section
+            for(var i = 0; i <response.length; i++) {
+                $('#return').append('<p>' + response[i].name + ': ' + response[i].fact + '</p>'); //appends array to cleared section
             }
         }   
     })

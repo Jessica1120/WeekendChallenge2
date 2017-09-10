@@ -18,17 +18,17 @@ app.get('/', function(res,req){
      res.sendFile(path.resolve('./Public/index.html'));
     }); //index route - I think this is for when a client first lands on a page.
 
-  app.get('/personlist', function(req, res){
-      console.log('in personlist route');
-     res.send(peopleList); // sends array to client.js when GET is requested
-   });
-
 app.post('/personlist', function(req, res) {
-     var person = req.body.person;
+     var person = req.body;
      console.log('post person route', person);
     peopleList.push(person);
     res.sendStatus(201);
  }); // pushes the new person input object from client into array
+
+ app.get('/personlist', function(req, res){
+  console.log('in personlist route');
+ res.send(peopleList); // sends array to client.js when GET is requested
+});
 
  app.listen(port, function() {  //spins up server
     console.log('server is up on', port);
